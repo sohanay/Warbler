@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if users|length == 0 %}
+    <h3>Sorry, no users found</h3>
+  {% else %}
+    <div class="row justify-content-end">
+      <div class="col-sm-9">
+        <div class="row">
+          {% import 'users/user_cards.html' as create_user_cards %}
+          {{ create_user_cards.user_cards(users) }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

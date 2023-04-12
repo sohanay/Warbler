@@ -1,0 +1,11 @@
+{% extends 'users/detail.html' %}
+
+{% block user_details %}
+  <div class="col-sm-9">
+    <div class="row">
+      {% import 'users/user_cards.html' as create_user_cards %}
+      {{ create_user_cards.user_cards(user.followers) }}
+    </div>
+  </div>
+
+{% endblock %}
